@@ -54,15 +54,25 @@ Layout
 
 }
 
+
+
 /*. */
 
 body {
+    display: flex;
     font-family: 'Inter', sans-serif;
     background: var(--dark-primary);
     color: var(--light-primary);
     text-align: center;
     min-height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* ⬅ vertical centering */
+    margin: 0;
+    padding: 8rem; /* optional spacing */
+
 }
+
 
 main {
     display: flex;
@@ -81,14 +91,20 @@ main {
     background-color: var(--light-secondary);
     color: var(--dark-primary);
     border-radius: .5em;
+    width: 100%;
+    max-width: 750px; /* was 600px */
+    padding: 3em 4em; /* was 2em 3em */
+    font-size: 1.25rem;
 }
 
+/*
 .wrapper--accent {
     padding: 2em 3em;
     border: 1px solid var(--dark-primary);
     box-shadow: 0 0 5px 2px var(--light-primary);
     
 }
+*/
 
 /*===========================
 Typography
@@ -125,15 +141,15 @@ Buttons
 .btn--text {
     background-color: var(--dark-primary);
     color: var(--light-primary);
-    font-size: 1.25rem;
+    font-size: 1.5rem; /* was 1.25rem */
     width: max-content;
     margin: 0 auto;
-    padding: .25em .75em;
+    padding: .5em 1.25em; /* was .25em .75em */
 }
 
 .btn--emoji {
-    width: 100%;
-    height: 100px;
+    width: 200px;
+    height: 200px;
     font-size: 3rem;
     border: 2px solid var(--light-primary);
 }
@@ -152,13 +168,22 @@ Form
 .form-container {
     display: flex;
     flex-direction: column;
-    gap: 1.5em;
+    gap: 2em; /* was 1.5em */
     text-align: start;
+    font-size: 1.25rem; /* added */
+    
+}
+
+.form-container h1 {
+  text-align: center;
+  width: 100%;
+  font-size: 3rem; /* Larger font */
+  margin-bottom: 0.5em; /* Space below */
 }
 
 form {
     gap: 2em;
-    font-size: 1.125rem;
+    font-size: 1.25rem; /* was 1.125rem */
     padding: 1em;
     border-radius: .5em;
 }
@@ -173,7 +198,8 @@ select {
     background-color: var(--dark-primary);
     color: var(--light-primary);
     font-family: inherit;
-    padding: .5em;
+    font-size: 1.125rem; /* added */
+    padding: .75em;
     border: 1px solid var(--dark-primary);
     border-radius: .5em;
     cursor: pointer;
@@ -189,12 +215,22 @@ select:focus {
 /*===========================
 Game
 ============================*/
+
+
 .card-container {
-    padding-left: 0;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    gap: 1em;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 2.5em;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
     width: 100%;
+    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2rem 0;
+    max-width: 1200px;
+  
 }
 
 .card-item {
@@ -266,11 +302,13 @@ Media queries
 
     .btn--emoji {
         font-size: 4rem;
-        height: 110px;
+        width: 200px;
+        height: 200px;
     }
 
     .card-container {
-        grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+        grid-template-columns: repeat(5, 1fr);
+        gap: 2.5em;
     }
 }
 
@@ -281,10 +319,33 @@ Media queries
 
     .btn--emoji {
         font-size: 4.5rem;
-        height: 125px;
+        width: 200px;
+        height: 200px;
     }
 
     .card-container {
-        grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
+        grid-template-columns: repeat(5, 1fr);
+        gap: 2.5em;
     }
 }
+
+.level-20 .btn--emoji,
+.level-30 .btn--emoji,
+.level-40 .btn--emoji,
+.level-50 .btn--emoji {
+  width: 125px;
+  height: 125px;
+  font-size: 2.75rem;
+}
+
+.level-20 .card-container,
+.level-30 .card-container,
+.level-40 .card-container,
+.level-50 .card-container {
+  grid-template-columns: repeat(10, 1fr);
+  gap: 1.2rem;
+  max-width: 100vw;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+

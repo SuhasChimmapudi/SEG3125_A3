@@ -5,9 +5,10 @@ import AssistiveTechInfo from './components/AssistiveTechInfo'
 import GameOver from './components/GameOver'
 import ErrorCard from './components/ErrorCard'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import { Navbar, Nav, Container } from 'react-bootstrap';
 //import Home from './components/Home';
 import About from './components/About';
+import CustomNavbar from './components/CustomNavbar';
+import { Container } from 'react-bootstrap';
 
 export default function App() {
     const initialFormData = {category: "animals-and-nature", number: 10}
@@ -205,37 +206,12 @@ export default function App() {
     
     return (
       <Router>
-        <Navbar
-          expand="lg"
-          className="py-3"
-          style={{
-            backgroundColor: "#ffffff",
-            boxShadow: "0 2px 8px rgba(0, 0, 0, 0.05)",
-            borderBottom: "1px solid #eee",
-          }}
-        >
-          <Container>
-            <Navbar.Toggle aria-controls="basic-navbar-nav" />
-            <Navbar.Collapse
-              id="basic-navbar-nav"
-              className="justify-content-end"
-            >
-              <Nav className="gap-3 text-uppercase fw-semibold">
-                <Nav.Link as={Link} to="/" className="text-dark">
-                  Home
-                </Nav.Link>
-                <Nav.Link as={Link} to="/about" className="text-dark">
-                  About Us
-                </Nav.Link>
-              </Nav>
-            </Navbar.Collapse>
-          </Container>
-        </Navbar>
+        <CustomNavbar />
         <Container className="mt-4">
           <Routes>
             <Route path="/" element={
               <main>
-                <h1>Memory</h1>
+                
                 {isGameOn && !areAllCardsMatched && (
                   <>
                     <h2>Score: {score}</h2>
@@ -249,14 +225,17 @@ export default function App() {
                 {isGameOn && !areAllCardsMatched && 
                   <AssistiveTechInfo emojisData={emojisData} matchedCards={matchedCards} />}
                 {areAllCardsMatched && <GameOver handleClick={resetGame} />}
-                {isGameOn &&
-                  <MemoryCard
-                    handleClick={turnCard}
-                    data={emojisData}
-                    selectedCards={selectedCards}
-                    matchedCards={matchedCards}
-                  />
-                }
+                {isGameOn && (
+                    <div className={`card-container-wrapper level-${formData.number}`}>
+                        <MemoryCard
+                        handleClick={turnCard}
+                        data={emojisData}
+                        selectedCards={selectedCards}
+                        matchedCards={matchedCards}
+                        />
+                    </div>
+                )}
+
                 {isError && <ErrorCard handleClick={resetError} />}
                 {milestoneReached && (
                   <div className="milestone-popup">

@@ -1,0 +1,53 @@
+/* components/Header.css */
+
+header {
+  position: fixed;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 2rem);
+  max-width: 1200px;
+  background-color: green;
+  border-radius: 12px;
+  padding: 0.5rem 0;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  z-index: 999;
+}
+
+
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+}
+
+.logo {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffc85c;
+  transition: color 0.3s ease;
+}
+
+header.scrolled .logo {
+  color: #111827;
+}
+
+nav a {
+  margin-left: 2rem;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #ffffff;
+  text-transform: lowercase;
+  transition: color 0.3s ease;
+}
+
+header.scrolled nav a {
+  color: #111827;
+}
+
+nav a:hover {
+  color: #ffc85c;
+}
