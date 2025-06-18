@@ -13,6 +13,49 @@
 /*===========================
 Layout
 ============================*/
+
+/* Added */
+.score-display {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: whitesmoke;
+}
+
+.milestone-popup {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: gold;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    font-weight: bold;
+    font-size: 1.2rem;
+    z-index: 1000;
+    animation: fadeInOut 2s ease-in-out;
+}
+
+.timeout-popup {
+    margin-top: 1rem;
+    background-color: #ffe0e0;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+@keyframes fadeInOut {
+    0% { opacity: 0; transform: translateX(-50%) scale(0.9); }
+    10% { opacity: 1; transform: translateX(-50%) scale(1); }
+    90% { opacity: 1; }
+    100% { opacity: 0; transform: translateX(-50%) scale(0.9); }
+
+}
+
+/*. */
+
 body {
     font-family: 'Inter', sans-serif;
     background: var(--dark-primary);

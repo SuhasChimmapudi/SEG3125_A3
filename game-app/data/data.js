@@ -22,22 +22,28 @@ const data = {
         }
     ],
     number: [
-        {
-            value: "10"
-        },
-        {
-            value: "20"
-        },
-        {
-            value: "30"
-        },
-        {
-            value: "40"
-        },
-        {
-            value: "50"
-        },
-    ]
+    {
+        value: "10",
+        name: "Level 1"
+    },
+    {
+        value: "20",
+        name: "Level 2"
+    },
+    {
+        value: "30",
+        name: "Level 3"
+    },
+    {
+        value: "40",
+        name: "Level 4"
+    },
+    {
+        value: "50",
+        name: "Level 5"
+    },
+]
+
 }
 
 export { data }
