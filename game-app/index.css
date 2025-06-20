@@ -1,13 +1,18 @@
 * {
     margin: 0;
+    font-family: 'Fredoka', sans-serif;
 }
 
 :root {
     --dark-primary: #082f49;
     --light-primary: #f0f9ff;
-    --light-secondary: #cbd5e1;
+    --light-secondary: rgba(255, 255, 255, 0.95);
     --accent: #fde68a;
     --btn-disabled: #a8a29e;
+    /* Dropdown select colors */
+    --select-bg-color: #FFFFFF;     /* dropdown background */
+    --select-text-color: #4B0082;   /* dropdown text */
+    --select-border-color: #4B0082; /* dropdown border */
 }
 
 /*===========================
@@ -37,13 +42,41 @@ Layout
 }
 
 .timeout-popup {
-    margin-top: 1rem;
-    background-color: #ffe0e0;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    text-align: center;
-    font-weight: bold;
+  margin-top: 1rem;
+  background-color: #ffe4e1; /* Light peach background */
+  padding: 1.5rem;
+  border-radius: 1rem;
+  text-align: center;
+  font-weight: 600;
+  color: #4B0082; /* Indigo text */
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  font-size: 1.25rem;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Fredoka', sans-serif;
 }
+
+.timeout-popup button {
+  margin-top: 1rem;
+  background-color: #dba879;  /* same as start game button */
+  color: white;
+  border: 2px solid #082f49;  /* dark blue border */
+  padding: 0.5em 1.5em;
+  border-radius: 0.75rem;
+  font-size: 1.25rem;
+  font-family: 'Fredoka', sans-serif;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.timeout-popup button:hover,
+.timeout-popup button:focus {
+  background-color: #b8754f;
+  color: white;
+  outline: none;
+}
+
 
 
 @keyframes fadeInOut {
@@ -60,8 +93,8 @@ Layout
 
 body {
     display: flex;
-    font-family: 'Inter', sans-serif;
-    background: var(--dark-primary);
+    font-family: 'Fredoka', sans-serif;
+    background: indigo;
     color: var(--light-primary);
     text-align: center;
     min-height: 100vh;
@@ -72,6 +105,11 @@ body {
     padding: 8rem; /* optional spacing */
 
 }
+
+h1, .btn, .btn--emoji {
+  font-family: 'Fredoka', sans-serif;
+}
+
 
 
 main {
@@ -97,6 +135,45 @@ main {
     font-size: 1.25rem;
 }
 
+.score-section h2,
+.score-section p {
+  font-family: 'Fredoka', sans-serif !important;
+}
+
+.score-section {
+  font-family: 'Fredoka', sans-serif !important;
+  text-align: center;
+}
+
+.score-section {
+  font-family: 'Fredoka', sans-serif !important;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.score-section h2 {
+  margin-bottom: 0.75rem;
+   font-family: 'Fredoka', sans-serif !important;
+}
+
+.score-section p {
+  margin-bottom: 0.5rem;
+  font-family: 'Fredoka', sans-serif !important;
+    
+}
+
+.score-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem; /* controls the spacing between items */
+  font-family: 'Fredoka', sans-serif !important;
+}
+
+
+
+
+
 /*
 .wrapper--accent {
     padding: 2em 3em;
@@ -111,7 +188,8 @@ Typography
 ============================*/
 
 h1 {
-    color: var(--accent);
+    /*color: var(--accent);*/
+    color: #f0d9bd;
     font-size: 2.25rem;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -123,7 +201,10 @@ h1 {
 }
 
 .p--regular {
-    font-size: 1.125em;    
+    font-size: 1.2em;    
+    margin: 1rem 0;
+    text-align: center; /* Ensures it's centered */
+    
 }
 
 /*===========================
@@ -139,12 +220,13 @@ Buttons
 }
 
 .btn--text {
-    background-color: var(--dark-primary);
+    background-color: #dba879;
     color: var(--light-primary);
     font-size: 1.5rem; /* was 1.25rem */
     width: max-content;
     margin: 0 auto;
     padding: .5em 1.25em; /* was .25em .75em */
+    border-radius: 0.75rem; /* You can add this for a rounder look */
 }
 
 .btn--emoji {
@@ -171,6 +253,10 @@ Form
     gap: 2em; /* was 1.5em */
     text-align: start;
     font-size: 1.25rem; /* added */
+    align-items: center;       
+    justify-content: center;  
+    
+    
     
 }
 
@@ -195,14 +281,22 @@ form {
 }
 
 select {
-    background-color: var(--dark-primary);
-    color: var(--light-primary);
+    background-color: var(--select-bg-color);
+    color: var(--select-text-color);
     font-family: inherit;
     font-size: 1.125rem; /* added */
     padding: .75em;
-    border: 1px solid var(--dark-primary);
+    border: 1px solid var(--select-border-color);
     border-radius: .5em;
     cursor: pointer;
+    /* Hide default arrow in most browsers and add custom arrow */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%234B0082" viewBox="0 0 10 6" xmlns="http://www.w3.org/2000/svg"><path d="M0 0l5 6 5-6z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 0.75em center;
+    background-size: 0.65em;
 }
 
 select:hover,
@@ -232,6 +326,8 @@ Game
     max-width: 1200px;
   
 }
+
+
 
 .card-item {
     list-style: none;
@@ -265,7 +361,7 @@ Game
 .btn--emoji__front:hover,
 .btn--emoji__front:focus {
     background-color: var(--accent);
-    border: 2px solid var(--dark-primary);
+    border: 2px solid #dba879;
     box-shadow: 0 0 5px 2px var(--light-primary);
     cursor: pointer;
 }
@@ -274,6 +370,11 @@ Game
     border: 2px solid var(--dark-primary);
     box-shadow: 0 0 5px 2px var(--light-primary);
 }
+
+.btn--emoji__front {
+  color: #dba879; /* Or any color you'd like for the question mark */
+}
+
 
 /*===========================
 Screen reader only
@@ -349,3 +450,37 @@ Media queries
   box-sizing: border-box;
 }
 
+/* About page */
+.about-container {
+    max-width: 750px;
+    background-color: var(--light-secondary);
+    margin: 4rem auto;
+    padding: 3rem 4rem;
+    border-radius: 1rem;
+    color: var(--dark-primary);
+    font-family: 'Fredoka', sans-serif;
+    margin: 2rem auto 4rem auto; /* ⬅ reduce top margin from 4rem to 2rem */
+}
+
+.about-container h1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 2.5rem;
+    color: var(--dark-primary);
+}
+
+.about-paragraph {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.about-paragraph a {
+    color: #4B0082;
+    text-decoration: none;
+    margin: 0 0.5rem;
+}
+
+.about-paragraph a:hover {
+    text-decoration: underline;
+}

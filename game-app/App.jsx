@@ -96,16 +96,16 @@ export default function App() {
                 seconds = 30;
                 break;
             case "20":
-                seconds = 45;
+                seconds = 90;
                 break;
             case "30":
-                seconds = 60;
+                seconds = 120;
                 break;
             case "40":
-                seconds = 75;
+                seconds = 160;
                 break;
             case "50":
-                seconds = 90;
+                seconds = 220;
                 break;
             default:
                 seconds = 30; // fallback
@@ -213,12 +213,13 @@ export default function App() {
               <main>
                 
                 {isGameOn && !areAllCardsMatched && (
-                  <>
+                <div className="score-section">
                     <h2>Score: {score}</h2>
                     <p>High Score: {highScore}</p>
                     <p>⏱️ Time left: {timeLeft}s</p>
-                  </>
+                </div>
                 )}
+
                 {!isGameOn && !isError &&
                   <Form handleSubmit={startGame} handleChange={handleFormChange} />
                 }

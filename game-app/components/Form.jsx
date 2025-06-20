@@ -5,10 +5,12 @@ export default function Form({ handleSubmit, handleChange }) {
     return (
         <div className="form-container">
             <div className="title-container">
-                <h1><span>Memory</span></h1>
+                <h1><span>Match & Remember </span></h1>
             </div>
             <p className="p--regular">
-                Choose your style of cards and the level to play and improve your score.
+                Match pairs of cards in this fun memory game!<br/>
+                Choose a category, then pick your difficulty
+                to set the number of cards and put your memory to the test.
             </p>
             <form className="wrapper">
                 <Select handleChange={handleChange} />
