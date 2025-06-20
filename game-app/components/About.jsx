@@ -8,7 +8,7 @@ export default function About() {
             </p>
 
             <p className="about-paragraph">
-                This project was developed by <strong>Kairly Tawk & Suhas Chimmapudi</strong>, a software engineering student passionate about building accessible and engaging digital experiences.
+                This project was developed by <strong>Kairly Tawk & Suhas Chimmapudi</strong>, a software engineering students passionate about building accessible and engaging digital experiences.
             </p>
 
             <p className="about-paragraph">
