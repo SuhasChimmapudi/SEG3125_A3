@@ -89,7 +89,7 @@ export default function App() {
         const dataSlice = await getDataSlice(data);
         const emojisArray = await getEmojisArray(dataSlice);
 
-        // ✅ Set timer duration based on selected level
+        // Set timer duration based on selected level
         let seconds;
         switch (formData.number) {
             case "10":
