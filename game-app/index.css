@@ -12,8 +12,10 @@
     /* Dropdown select colors */
     --select-bg-color: #FFFFFF;     /* dropdown background */
     --select-text-color: #4B0082;   /* dropdown text */
-    --select-border-color: #4B0082; /* dropdown border */
+    --select-border-color: #4B0082; /* Purple */
 }
+
+
 
 /*===========================
 Layout
@@ -302,8 +304,8 @@ select {
 select:hover,
 select:focus {
     background-color: var(--light-primary);
-    color: var(--dark-primary);
-    box-shadow: 0 0 2px 1px var(--dark-primary);
+    color: var(indigo);
+    box-shadow: 0 0 2px 1px indigo;
 }
 
 /*===========================

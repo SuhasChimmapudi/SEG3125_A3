@@ -9,7 +9,7 @@ export default function Header() {
   return (
     <header className={scrolled ? 'scrolled' : ''}>
       <div className="container">
-        <div className="logo">MEMORY GAME</div>
+        <div className="logo">MATCH & REMEMBER</div>
         <nav>
           <a href="/">home</a>
           <a href="/about">about</a>
