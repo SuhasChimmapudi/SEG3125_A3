@@ -111,14 +111,14 @@ export default function App() {
                 seconds = 30; // fallback
         }
 
-        // ✅ Reset game state
+        // Reset game state
         setEmojisData(emojisArray);
         setIsGameOn(true);
         setTimeLeft(seconds);     // <-- now 'seconds' is defined!
         setIsTimeUp(false);
         setScore(0);
 
-        // ✅ Start countdown interval
+        // Start countdown interval
         const interval = setInterval(() => {
             setTimeLeft(prev => {
                 if (prev <= 1) {
