@@ -104,7 +104,7 @@ body {
     align-items: center;
     justify-content: center; /* ⬅ vertical centering */
     margin: 0;
-    padding: 8rem; /* optional spacing */
+    padding: 2rem; 
 
 }
 
@@ -314,20 +314,15 @@ Game
 
 
 .card-container {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 2.5em;
-    justify-items: center;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    margin: 0 auto;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 2rem 0;
-    max-width: 1200px;
-  
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  gap: 1rem;
+  width: 100%;
+  max-width: 1200px;
+  padding: 2rem 0;
+  box-sizing: border-box;
 }
+
 
 
 
@@ -400,7 +395,11 @@ Media queries
 ============================*/
 @media (min-width: 768px) {
     h1 {
-        font-size: 2.75rem;
+        font-size: 2.25rem;
+    }
+
+    body {
+        padding: 8rem;
     }
 
     .btn--emoji {
@@ -412,6 +411,11 @@ Media queries
     .card-container {
         grid-template-columns: repeat(5, 1fr);
         gap: 2.5em;
+    }
+
+    .wrapper {
+        max-width: 750px;
+        padding: 3em 4em;
     }
 }
 
